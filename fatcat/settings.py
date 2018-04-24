@@ -31,12 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'social_django',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +121,22 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+SOCIAL_AUTH_TRAILING_SLASH = False                    # Remove end slash from routes
+SOCIAL_AUTH_AUTH0_DOMAIN = 'fatcat.auth0.com'
+SOCIAL_AUTH_AUTH0_KEY = 'R__Qs9RvCsdn1MckaQ3SuwN4A2bdaep4'
+SOCIAL_AUTH_AUTH0_SECRET = 'vhEQ6C7d-BKklVz7M_2SD0vZESR_1d9RRqdKykHnK1k8rvSNufxYR8F4e1zSHIj_'
+
+SOCIAL_AUTH_AUTH0_SCOPE = [
+    'openid',
+    'profile'
+]
+
+AUTHENTICATION_BACKENDS = {
+    'home.ssoBackend.Auth0',
+    'django.contrib.auth.backends.ModelBackend'
+}
+
+LOGIN_URL = "/login/auth0"
+LOGIN_REDIRECT_URL = "/dashboard"
+LOGOUT_REDIRECT_URL = "/"
