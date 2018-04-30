@@ -22,3 +22,6 @@ def dashboard(request):
         'auth0User': auth0user,
         'userdata': json.dumps(userdata, indent=4)
     })
+
+def deptsearch(request):
+    return render(request, 'deptsearch.html')

@@ -1,12 +1,11 @@
 {% include 'navbar.html' %}
+<html>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 {% block content %}
-    <div class="login-page clearfix">
-        <div class="login-box auth0-box before">
-            <img src="https://i.cloudup.com/StzWWrY34s.png" />
-            <h3>Auth0 Example</h3>
-            <p>Zero friction identity infrastructure, built for developers</p>
-            <a class="btn btn-primary btn-lg btn-login btn-block" href="/login/auth0">Log In</a>
-        </div>
-    </div>
+    <img style="margin-left: auto; margin-right: auto; display: block; padding: 10px;" src="https://toll-imageinaboxllc.netdna-ssl.com/wp-content/uploads/2014/06/Fat-Cat_400-2.jpg">
+    <br>
+    <a href="/login/auth0"><button class=" btn btn-success" style="font-size: 25px; background-color: black; border-color:black; color: white; display: block; margin: auto">Sign In</button></a>
 {% endblock content %}
