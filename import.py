@@ -20,6 +20,6 @@ with open('Employees.csv') as csvfile:
         salary2 = row['ESTIMATED ANNUAL SALARY MINUS FURLOUGHS'].strip()
 
         new_employee = Employee(name = name, job = job, department = department, salary = salary, salary2 = salary2)
-        print(new_employee.name)
-        print(new_employee.job)
+        #print(new_employee.name)
+        #print(new_employee.job)
         new_employee.save()
