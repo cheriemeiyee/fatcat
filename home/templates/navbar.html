@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+
+	<style type="text/css">
+	@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
+			.topnav {
+	        	overflow: hidden;
+	        	background-color: #a29990;
+	     	}
+
+	      	.topnav a {
+	       		float: right;
+	        	color: white;
+	        	text-align: center;
+	        	padding: 14px 16px;
+	        	/*padding-bottom: 4px;
+	        	padding-top: 4px;*/
+	        	text-decoration: none;
+	      	}
+
+	     	.topnav a:hover {
+	        	background-color: #e2dedb;
+	        	color: black;
+	      	}
+
+	      	.topnav a.active {
+	       		background-color: #e2dedb;
+	        	color: white;
+	      	}
+
+	      	#font {
+	      		/*font-family: 'Berkshire Swash', Helvetica, sans-serif;*/
+	      		font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	      		font-size: 20px;
+	      	}
+
+	      	#font2 {
+	      		font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	      		font-size: 20px;
+	      	}
+
+          body {
+            font-family: 'Lato', sans-serif;
+            background: #e2dedb;
+            color: #a29990;
+          }
+
+          header {
+            position: relative;
+            margin: 100px 0 25px 0;
+            font-size: 2.3em;
+            text-align: center;
+            letter-spacing: 7px;
+          }
+
+          #form {
+            position: relative;
+            width: 500px;
+            margin: 50px auto 100px auto;
+          }
+
+          input {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.875em;
+            width: 470px;
+            height: 50px;
+            padding: 0px 15px 0px 15px;
+            
+            background: transparent;
+            outline: none;
+            color: #726659;
+            
+            border: solid 1px #a29990;
+            border-bottom: none;
+            
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+          }
+
+          input:hover {
+            background: #b3aca7;
+            color: #e2dedb;
+          }
+
+	</style>
+</head>
+<body>
+
+	
+		<div class="topnav">
+			<div id="font" class="{% if active_tab == 'home' %}active{% endif %}" style="float: left;"><a href="/">fatcat</a></div>
+			<div id="font2" class="{% if active_tab == 'employees' %}active{% endif %}"><a href="/">Employees</a></div>
+			<div id="font2" class="{% if active_tab == 'departments' %}active{% endif %}"><a href="/deptsearch">Departments</a></div>
+		</div>
+
+</body>
+</html>
