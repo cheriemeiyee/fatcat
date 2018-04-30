@@ -1,7 +1,7 @@
 import sys, os, django
 
 
-sys.path.append("/Users/nithyarajan/Cmpe172/fatcat/") #here store is root folder(means parent).
+sys.path.append("/Users/cherie/Desktop/CMPE172/fatcat/") #here store is root folder(means parent).
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "fatcat.settings")
 django.setup()
