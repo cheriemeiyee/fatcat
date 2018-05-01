@@ -9,4 +9,6 @@ urlpatterns = [
     url(r'^', include('social_django.urls', namespace='social')),
     url(r'^deptsearch', views.deptsearch),
     url(r'^results', views.search, name="search"),
+    url(r'^addemployee', views.addemployee, name="addemployee"),
+    url(r'^employee', views.employee, name='employee'),
 ]

@@ -156,11 +156,11 @@
 	
 		<header>SEARCH BY DEPARTMENT</header>
 
-			<form id="form" class="topBefore" action="/searchresults">
-		
-		  	<input id="name" type="text" placeholder="Department" required>
+			<form method="GET" id="form" class="topBefore" action="/results">
+
+		  	<input name="q" value = "{{ request.GET.q }}"type="text" placeholder="Department" required>
+
   			<input id="submit" type="submit" value="Search">
-  
 		</form>
 
 </body>

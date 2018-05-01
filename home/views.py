@@ -5,6 +5,7 @@ import json
 
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Employee
+from home.forms import EmployeeForm
 from django.http import Http404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
@@ -54,8 +55,8 @@ def search(request):
     template = 'results.html'
     query = request.GET.get('q')
     # print(query)
-    results = Employee.objects.filter(Q(name__icontains=query))
-    # print(results)
+    results = Employee.objects.filter(Q(name__icontains=query)|Q(department__icontains=query))
+    print(results)
     context = {
          'results': results,
          'query': query,
@@ -65,4 +66,22 @@ def search(request):
     print(rendered)
     return rendered
 
+def addemployee(request):
+    if request.method == "POST":
+        form = EmployeeForm(request.POST)
+        if form.is_valid():
+            name = request.POST.get('name','')
+            job = request.POST.get('job','')
+            department = request.POST.get('department','')
+            employee_object = Employee(name = name, job = job, department = department)
+            employee_object.save()
+            return render(request, 'dashboard.html')
+    else:
+        form = EmployeeForm()
 
+    return render(request, 'addemployee.html', {
+        'form': form,
+    })
+
+def employee(request):
+    return render(request, 'employee.html')
