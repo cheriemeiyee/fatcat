@@ -53,11 +53,16 @@ def results(request):
 def search(request):
     template = 'results.html'
     query = request.GET.get('q')
-    results = Employee.objects.filter(Q(name__icontains=query) | Q(name__icontains=query))
+    # print(query)
+    results = Employee.objects.filter(Q(name__icontains=query))
+    # print(results)
     context = {
-        'results': results,
-        'query': query,
+         'results': results,
+         'query': query,
     }
-    return render(request,template,context)
+    # print(context)
+    rendered = render(request,template, context)
+    print(rendered)
+    return rendered
 
 

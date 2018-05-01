@@ -2,13 +2,14 @@
 
 {% block content %}
 <table>
-	<tr> 
+	<tr>
 		<th><h2>Name</h2></th>
 		<th><h2>Job</h2></th>
 		<th><h2>Department</h2></th>
 	</tr>
 {% for employee in employees %}
-	<tr> 
+   <p> Hello there!</p>
+	<tr>
 		<th>{{employee.name}}</th>
 		<th>{{employee.job}}</th>
 		<th>{{employee.department}}</th>
@@ -27,13 +28,16 @@ table {
     border-collapse: collapse;
     border: 1px solid black;
     width: 100%;
-}
+
 
 td, th {
     border: 1px solid black;
     text-align: left;
     padding: 8px;
-}
+
 
 </style>
+
+
+
 
