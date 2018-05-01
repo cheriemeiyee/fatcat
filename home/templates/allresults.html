@@ -7,8 +7,8 @@
 		<th><h2>Job</h2></th>
 		<th><h2>Department</h2></th>
 	</tr>
-	<tr>
-{% for employee in results %}
+
+{% for employee in employees %}
 	<tr>
 		<th>{{employee.name}}</th>
 		<th>{{employee.job}}</th>
@@ -19,3 +19,20 @@
 
 </table>
 {% endblock %}
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    color: black;
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 100%;
+
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+
+
+</style>

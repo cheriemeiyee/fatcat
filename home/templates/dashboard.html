@@ -154,6 +154,14 @@
 </head>
 <body>
 
+    {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
 		<header>SEARCH BY EMPLOYEE NAME</header>
 
 			<form method="GET" id="form" class="topBefore" action="/results">
@@ -163,6 +171,8 @@
   			<input id="submit" type="submit" value="Search">
 
 		    </form>
+
+            <a href="/allresults"><button  style="font-size: 20px; background-color: black; font-family: 'Lato', sans-serif; color: white; display: block; margin: auto">View All Employees</button></a>
 
 </body>
 </html>

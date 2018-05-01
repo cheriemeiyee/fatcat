@@ -9,6 +9,7 @@ from home.forms import EmployeeForm
 from django.http import Http404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
+from django.contrib import messages
 
 def index(request):
     return render(request, 'index.html')
@@ -32,7 +33,7 @@ def dashboard(request):
 def deptsearch(request):
     return render(request, 'deptsearch.html')
 
-def results(request):
+def allresults(request):
     employee_list = Employee.objects.all()
     paginator = Paginator(employee_list, 52)  # Show 52 employees per page
 
@@ -49,7 +50,7 @@ def results(request):
     context = {
         'employees': employees,
     }
-    return render(request, 'results.html', context)
+    return render(request, 'allresults.html', context)
 
 def search(request):
     template = 'results.html'
@@ -75,6 +76,7 @@ def addemployee(request):
             department = request.POST.get('department','')
             employee_object = Employee(name = name, job = job, department = department)
             employee_object.save()
+            messages.success(request, 'Successfully added employee')
             return render(request, 'dashboard.html')
     else:
         form = EmployeeForm()

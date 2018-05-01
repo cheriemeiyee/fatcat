@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^results', views.search, name="search"),
     url(r'^addemployee', views.addemployee, name="addemployee"),
     url(r'^employee', views.employee, name='employee'),
+    url(r'^allresults', views.allresults, name='allresults'),
 ]
