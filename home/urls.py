@@ -1,11 +1,12 @@
 from django.conf.urls import url, include
 from . import views
 
+
 urlpatterns = [
     url('^$', views.index),
     url(r'^dashboard', views.dashboard),
     url(r'^', include('django.contrib.auth.urls', namespace='auth')),
     url(r'^', include('social_django.urls', namespace='social')),
     url(r'^deptsearch', views.deptsearch),
-    url(r'^results', views.results),
+    url(r'^results', views.search, name="search"),
 ]

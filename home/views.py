@@ -7,6 +7,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Employee
 from django.http import Http404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Q
 
 def index(request):
     return render(request, 'index.html')
@@ -48,3 +49,15 @@ def results(request):
         'employees': employees,
     }
     return render(request, 'results.html', context)
+
+def search(request):
+    template = 'results.html'
+    query = request.GET.get('q')
+    results = Employee.objects.filter(Q(name__icontains=query) | Q(name__icontains=query))
+    context = {
+        'results': results,
+        'query': query,
+    }
+    return render(request,template,context)
+
+

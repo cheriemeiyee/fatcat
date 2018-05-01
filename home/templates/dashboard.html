@@ -156,10 +156,10 @@
 
 		<header>SEARCH BY EMPLOYEE NAME</header>
 
-			<form id="form" class="topBefore" action="/searchresults">
+			<form method="GET" id="form" class="topBefore" action="/results">
 
-		  	<input name="firstname" type="text" placeholder="Employee First Name" required>
-		  	<input name="lastname" type="text" placeholder="Employee Last Name" required>
+		  	<input name="q" value = "{{ request.GET.q }}"type="text" placeholder="Employee First Name" required>
+		  	<input name="q" value = "{{ request.GET.q }}" type="text" placeholder="Employee Last Name" required>
   			<input id="submit" type="submit" value="Search">
 
 		</form>

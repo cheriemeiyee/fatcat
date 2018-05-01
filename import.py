@@ -1,7 +1,7 @@
 import sys, os, django
 
 
-sys.path.append("/Users/cherie/Desktop/CMPE172/fatcat/") #here store is root folder(means parent).
+sys.path.append("/Users/cherie/Desktop/Cmpe172/fatcat/") #here store is root folder(means parent).
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "fatcat.settings")
 django.setup()
@@ -20,6 +20,6 @@ with open('Employees.csv') as csvfile:
         salary2 = row['ESTIMATED ANNUAL SALARY MINUS FURLOUGHS'].strip()
 
         new_employee = Employee(name = name, job = job, department = department, salary = salary, salary2 = salary2)
-        #print(new_employee.name)
+        print(new_employee.name)
         #print(new_employee.job)
         new_employee.save()
