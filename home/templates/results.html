@@ -1,19 +1,39 @@
 {% include "navbarafter.html" %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Results</title>
-
-</head>
-<body>
 {% block content %}
-    <div>
-        {% for employee in employees %}
-        {{employee.name}}
-    {% endfor %}
-    </div>
+<table>
+	<tr> 
+		<th><h2>Name</h2></th>
+		<th><h2>Job</h2></th>
+		<th><h2>Department</h2></th>
+	</tr>
+{% for employee in employees %}
+	<tr> 
+		<th>{{employee.name}}</th>
+		<th>{{employee.job}}</th>
+		<th>{{employee.department}}</th>
+	</tr>
+{% endfor %}
 
-{% endblock content %}
-</body>
-</html>
+
+</table>
+
+{% endblock %}
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    color: black;
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+</style>
+
